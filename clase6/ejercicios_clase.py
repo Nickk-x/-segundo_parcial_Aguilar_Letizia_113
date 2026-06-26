@@ -138,7 +138,7 @@ def verificar_primo(numero : int) -> bool:
 
 numero_ingresado = int(input("Ingrese un numero: "))
 contador_primos = 0
-for i in range(numero_ingresado):
+for i in range(numero_ingresado + 1):
     primo_verificado = verificar_primo(i)
 
     if primo_verificado:
@@ -147,6 +147,10 @@ for i in range(numero_ingresado):
     else:
         print(f"{i} no es primo.")
 print(f"Se hallaron {contador_primos} primos")
+
+
+
+
 """
 Objetivos de una funcion:
 Minificacion: Logramos que el programa sea mas simple de comprender ya que cada
@@ -161,8 +165,25 @@ que se quiera y asi reutilizar codigo.
 
 Independencia: Se obtiene una autonomia del codigo donde cada funcion es 
 independiente de otra.
-"""
 
+Ejercicios clase:
+"""
+def pedir_entero(mensaje: str, mensaje_error : str = "ERROR: ingrese un numero valido: ", minimo : int = False, maximo : int = False, reintentos: int = 1 ):
+    numero_ingresado = int(input(mensaje))
+
+    while (minimo != False and numero_ingresado < minimo) or (maximo != False and numero_ingresado > maximo):
+        if reintentos < 0:
+            numero_ingresado = None
+            break
+        numero_ingresado = int(input(mensaje_error))
+        reintentos -= 1
+
+    return numero_ingresado
+
+numero_ingresado = pedir_entero("Ingrese CUALQUIER numero: ")
+edad_ingresada = pedir_entero("Ingrese su edad: ")
+print(edad_ingresada)
+altura_ingresada = pedir_entero("Ingrese su altura en centimetros: ", "ERROR: No puedes medir negativo, reingrese su altura: ", 1)
 
 
 

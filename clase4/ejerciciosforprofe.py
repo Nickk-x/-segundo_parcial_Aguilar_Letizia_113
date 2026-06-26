@@ -94,8 +94,8 @@ for i in range(numero_minimo, numero_maximo):
 #endregion
 
 #region ejercicio 8
-
-numero_ingresado = int(input("Ingrese un numero:  "))
+"""
+numero_ingresado = int(input("Ingrese un numero:                              "))
 numero_actual = 0
 
 for i in range(1, numero_ingresado + 1 ):
@@ -103,6 +103,7 @@ for i in range(1, numero_ingresado + 1 ):
     numero_actual += i
 
     print(numero_actual)
+"""
 #endregion
 
 

@@ -23,16 +23,16 @@ ejemplo:
 1! =                 1 / 1! = 1      = 1
 
 """
-def calcular_fsctorial(numero : int) -> int:
+def calcular_factorial(numero : int) -> int:
 
     if numero == 1:
         resultado = 1
     else:
-        resultado = numero * calcular_fsctorial(numero - 1)
+        resultado = numero * calcular_factorial(numero - 1)
 
     return resultado
 
-resultado_factorial = calcular_fsctorial(5)
+resultado_factorial = calcular_factorial(5)
 
 print(resultado_factorial)
 

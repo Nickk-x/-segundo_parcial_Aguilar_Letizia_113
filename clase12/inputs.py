@@ -1,9 +1,10 @@
-
+"""
+Modulo que contiene las funciones de entrada y validacion de datos
+"""
 
 #region inputs
 def pedir_entero(mensaje: str, mensaje_error : str = "ERROR: ingrese un numero valido: ", minimo : int = False, maximo : int = False, reintentos: int = 1 ):
     numero_ingresado = int(input(mensaje))
-
     while (minimo != False and numero_ingresado < minimo) or (maximo != False and numero_ingresado > maximo):
         if reintentos < 0:
             numero_ingresado = None
@@ -14,7 +15,6 @@ def pedir_entero(mensaje: str, mensaje_error : str = "ERROR: ingrese un numero v
     return numero_ingresado
 #endregion
 
-#region Validaciones
 def validar_str_a_int(cadena : str) -> bool: #es un boleano por que estas descubriendo si puede devolver un flotante o no
     if type(cadena) == str:
         validado = True
@@ -32,11 +32,6 @@ def validar_str_a_int(cadena : str) -> bool: #es un boleano por que estas descub
         validado = False
         
     return validado
-
-cadena_a_transformar = "1.16.4"
-cadena_a_transformar_int = "127.3"
-print(validar_str_a_int(cadena_a_transformar_int))
-
 
 def validar_str_a_float(cadena : str) -> bool: #es un boleano por que estas descubriendo si puede devolver un flotante o no
     if type(cadena) == str:
@@ -66,43 +61,13 @@ def validar_str_a_float(cadena : str) -> bool: #es un boleano por que estas desc
         
     return validado
 
-cadena_a_transformar_float = "1273"
-print(validar_str_a_float(cadena_a_transformar_float))
+def pedir_float(mensaje: str, mensaje_error : str = "ERROR: ingrese un numero valido: ", minimo : int = False, maximo : int = False, reintentos: int = 1 ):
+    numero_ingresado = float(input(mensaje))
+    while (minimo != False and numero_ingresado < minimo) or (maximo != False and numero_ingresado > maximo):
+        if reintentos < 0:
+            numero_ingresado = None
+            break
+        numero_ingresado = int(input(mensaje_error))
+        reintentos -= 1
 
-print(ord("a"))
-
-
-cadena_con_mayus = "Hola Mundo"
-#endregion
-
-#region utiles
-def transformar_lower(cadena : str) -> str:
-    cadena_final = ""
-    for caracter in cadena:
-        indice_caracter = ord(caracter)
-        if indice_caracter >= 65 and indice_caracter <= 90:
-            indice_caracter += 32
-        nuevo_caracter = chr(indice_caracter)
-        cadena_final += nuevo_caracter
-
-    return cadena_final
-
-print(transformar_lower(cadena_con_mayus))
-
-def transformar_upper(cadena : str) -> str:
-    cadena_final = ""
-    for caracter in cadena:
-        indice_caracter = ord(caracter)
-        if indice_caracter >= 97 and indice_caracter <= 122:
-            indice_caracter -= 32
-        nuevo_caracter = chr(indice_caracter)
-        cadena_final += nuevo_caracter
-
-    return cadena_final
-
-print(transformar_upper(cadena_con_mayus))
-#endregion
-
-
-
-
+    return numero_ingresado

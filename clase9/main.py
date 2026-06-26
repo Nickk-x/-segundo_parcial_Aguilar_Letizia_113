@@ -1,12 +1,12 @@
-import entradas
+import inputs
 
-from entradas import pedir_entero
+from inputs import pedir_entero
 
-from entradas import * #Esto es para importar todo
+from inputs import * #Esto es para importar todo
 
-import entradas as I #Voy a usar esta
+import inputs as I #Voy a usar esta
 
-edad_ingresada = entradas.pedir_entero("Ingrese su edad: ")
+edad_ingresada = inputs.pedir_entero("Ingrese su edad: ")
 
 edad_ingresada_2 = pedir_entero("Ingrese su edad otra vez: ")
 

@@ -4,10 +4,15 @@ ENTRADAS
 """
 Modulo que contiene las funciones de entrada y validacion de datos
 """
+
+from validaciones import *
+
+variable_a = 10
+
 #region inputs
 def pedir_entero(mensaje: str, mensaje_error : str = "ERROR: ingrese un numero valido: ", minimo : int = False, maximo : int = False, reintentos: int = 1 ):
     numero_ingresado = int(input(mensaje))
-
+    validar_str_a_int (numero_ingresado)
     while (minimo != False and numero_ingresado < minimo) or (maximo != False and numero_ingresado > maximo):
         if reintentos < 0:
             numero_ingresado = None

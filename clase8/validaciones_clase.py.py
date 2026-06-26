@@ -1,4 +1,4 @@
-"""
+
 
 variable = "hola"
 
@@ -76,7 +76,7 @@ cadena_a_transformar_float = "1273"
 print(validar_str_a_float(cadena_a_transformar_float))
 
 print(ord("a"))
-"""
+
 
 cadena_con_mayus = "Hola Mundo"
 
